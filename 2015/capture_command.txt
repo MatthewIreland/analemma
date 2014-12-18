@@ -1,0 +1,1 @@
+mplayer tv:// -tv driver=v4l2:width=640:height=480:outfmt=i420:norm=PAL:device=/dev/video0:input=2:fps=30 -vo png -frames 25
