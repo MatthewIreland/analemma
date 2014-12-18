@@ -16,7 +16,7 @@ foreach(@times) {
     $current_time =~ /(\d\d)(\d\d)/;
     $hour = $1;
     $minute = $2;
-    print $CRONSFH "* * * $hour $minute /usr/local/bin/analemma_capture.sh\n";
+    print $CRONSFH "$minute $hour * * * /usr/local/bin/analemma_capture.sh\n";
 }
 
 close $TIMESFH;
