@@ -9,7 +9,9 @@ open(my $TEMPLATEFH, "<", "capture_command.txt") or die "Couldn't open capture_c
 print $COMMANDFH "#!/bin/bash\n";
 print $COMMANDFH "# Generated using mkscript.pl\n\n";
 print $COMMANDFH "cd /home/matthew/analemma_shots\n";
-print $COMMANDFH "mkdir \$(date --iso-8601)\n";
+print $COMMANDFH "dirname=\$(date -I'seconds')\n";
+print $COMMANDFH "mkdir \$dirname\n";
+print $COMMANDFH "cd \$dirname\n";
 my $command = <$TEMPLATEFH>;
 print $COMMANDFH "${command}\n";
 
